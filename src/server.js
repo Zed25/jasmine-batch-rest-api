@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/jasmine_batch', { useNewUrlParser: true })
+mongoose.connect(`${process.env.mongo_uri}/${process.env.mongo_db}`, { useNewUrlParser: true })
         .then(() => console.log('MongoDB connected…'))
         .catch(err => console.log(err));
 
@@ -15,5 +15,5 @@ mongoose.connect('mongodb://localhost:27017/jasmine_batch', { useNewUrlParser: t
 app.use('/api/v1/queries', routes);
 
 app.listen(process.env.port, () =>
-    console.log('Example app listening on port ' + process.env.port + '!'),
+    console.log('Jasmine Batch app listening on port ' + process.env.port + '!'),
 );

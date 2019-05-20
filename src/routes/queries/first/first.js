@@ -27,7 +27,7 @@ const mapQueryResults = async(results) => {
 };
 
 router.get('', (req, res) => {
-    dataModel.find().exec(async (err, results) => {
+    dataModel.find().sort('year').exec(async (err, results) => {
         return res.send(await mapQueryResults(results));
     });
 });

@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost:27017/jasmine_batch', { useNewUrlParser: t
 
 //app.use(cors);
 
-app.use('/queries', routes);
+app.use('/api/v1/queries', routes);
 
 app.listen(process.env.port, () =>
     console.log('Example app listening on port ' + process.env.port + '!'),
